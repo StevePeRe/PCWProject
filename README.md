@@ -1,2 +1,2 @@
 # PCWProject
-Project developed in HTML, CSS and JavaScript lenguage.
+This project only show its code about how it was created since it´s a local project.
