@@ -1,0 +1,72 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# Ruta completa desde htdocs hasta la carpeta "api".
+# Si el path hasta la carpeta es C:\xampp\htdocs\practica2\api,
+# habría que poner lo siguiente: RewriteBase /practica2/api/
+RewriteBase /pcw/practica2/api/
+
+##################################################
+### REGLAS PARA USUARIO
+##################################################
+### PREGUNTAR DISPONIBILIDAD DE LOGIN
+# Regla que redirige a api/get/usuarios.php
+# Con esta línea de abajo, sólo acepta peticiones GET
+RewriteCond %{THE_REQUEST} ^GET
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^usuarios(.*)$ get/usuarios.php?prm=$1&%{QUERY_STRING} [L]
+
+### HACER LOGIN
+# Regla que redirige a api/post/usuarios/login.php
+# Con esta línea de abajo, sólo acepta peticiones POST
+RewriteCond %{THE_REQUEST} ^POST
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^usuarios/login$ post/usuarios/login.php [L]
+
+### HACER LOGOUT
+# Regla que redirige a api/post/usuarios/logout.php
+# Con esta línea de abajo, sólo acepta peticiones POST
+RewriteCond %{THE_REQUEST} ^POST
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^usuarios/logout$ post/usuarios/logout.php [L]
+
+### HACER REGISTRO
+# Regla que redirige a api/post/usuarios/registro.php
+# Con esta línea de abajo, sólo acepta peticiones POST
+RewriteCond %{THE_REQUEST} ^POST
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^usuarios/registro$ post/usuarios/registro.php [L]
+
+##################################################
+### REGLAS PARA LUGARES
+##################################################
+### PEDIR INFORMACIÓN SOBRE LUGARES
+# Regla que redirige a api/get/lugares.php
+# Con esta línea de abajo, sólo acepta peticiones GET
+RewriteCond %{THE_REQUEST} ^GET
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^lugares(.*)$ get/lugares.php?prm=$1&%{QUERY_STRING} [L]
+
+### DAR DE ALTA UN LUGAR O DEJAR UNA VALORACION
+# Regla que redirige a api/post/lugares.php
+# Con esta línea de abajo, sólo acepta peticiones POST
+RewriteCond %{THE_REQUEST} ^POST
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^lugares(.*)$ post/lugares.php?prm=$1&%{QUERY_STRING} [L]
+
+##################################################
+### REGLAS PARA ETIQUETAS
+##################################################
+### PEDIR INFORMACIÓN SOBRE ETIQUETAS
+# Regla que redirige a api/get/etiquetas.php
+# Con esta línea de abajo, sólo acepta peticiones GET
+RewriteCond %{THE_REQUEST} ^GET
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^etiquetas(.*)$ get/etiquetas.php?prm=$1&%{QUERY_STRING} [L]

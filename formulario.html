@@ -1,0 +1,12 @@
+<form id="form-lugar3" onsubmit="return GuardarComentario(this);">
+    <h3>Deja tu valoración: </h3>
+    <input class="input_lugar" type="text" name="titulo" placeholder="Título" required>
+    <textarea class="input_lugar" name="texto" cols="30" rows="4" placeholder="Inserte texto aquí"></textarea>
+    <h6>Valoración (1-5)</h6>
+    <input class="input_buscar" type="range" name="puntuacion" min="1" max="5" value="1"
+        list="lista_nums">
+    <div class="botones_lugar">
+        <input class="boton_lugar1" type="reset" value="Borrar">
+        <input class="boton_lugar2" type="submit" value="Publicar">
+    </div>
+</form>

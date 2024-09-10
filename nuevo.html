@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="estilo.css" media="screen">
+        <link rel="stylesheet" href="./font/fontello.css">
+        <script src="codigo.js"></script>
+        <title>Nuevo</title>
+    </head>
+
+    <body>
+
+        <div class="principio">
+            <a href="./index.html">
+                <img class="logo" src="fotos/logo.png" alt="foto logo de la pagina">
+            </a>
+
+            <div class="titulo">
+                <h1>RESTAURANTES A LA CARTA</h1>
+            </div>
+
+            <div class="subtitulo">
+                <h2>Los mejores restaurantes para las mejores experiencias</h2>
+            </div>
+
+        </div>
+
+        <!-- <nav class="nav_h">
+            <input type="checkbox" id="menu">
+            <label for="menu"> <i class="icon-align-justify"></i> </label>
+            <ul>
+                <li><a href="index.html"><i class="icon-home"></i></a></li>
+                <li><a href="buscar.html"><i class="icon-search-1"></i></a></li>
+                <li><a href="nuevo.html"><i class="icon-doc-new"></i></a></li>
+                <li><a href="index.html"><i class="icon-logout"></i></a></li>
+                <li><a href="login.html"><i class="icon-login"></i></a></li>
+                <li><a href="registro.html"><i class="icon-user-add"></i></a></li>
+            </ul>
+        </nav> -->
+
+        <nav class='navMenu'>
+            <i class="icon-home"><a href="index.html"> Inicio </a></i>
+            <i class="icon-search-1"><a href="buscar.html"> Buscar </a></i>
+            <i class="icon-doc-new" id="nuevo"><a href="nuevo.html"> Nuevo lugar </a></i>
+            <i class="icon-logout" id="logout"><a href="index.html" onclick="hacerLogout();"> Logout </a>(<label
+                    id="name_usu"></label>)</i>
+            <i class="icon-login" id="login"><a href="login.html"> Login </a></i>
+            <i class="icon-user-add" id="registro"><a href="registro.html"> Nuevo usuario</a></i>
+        </nav>
+
+        <form class="form-nuevo">
+            <h4>AÑADIR NUEVO LUGAR</h4>
+            <h3>Nombre</h3>
+            <input class="input_nuevo" type="text" placeholder="Nombre" required>
+            <h3>Ubicacion</h3>
+            <input class="input_nuevo" type="text" placeholder="Direccion (calle, avda, plaza...)" required maxlength="150">
+            <input class="input_nuevo" type="text" placeholder="Poblacion" required maxlength="150">
+            <input class="input_nuevo" type="text" placeholder="Provincia" required maxlength="150">
+            <h3>Comentario</h3>
+            <textarea class="input_txt" placeholder="Provincia" required maxlength="300"> </textarea>
+            <h3>Etiquetas</h3>
+            <input list="etiquetas" class="input_nuevo" type="text">
+            <datalist id="etiquetas">
+                <option value="Bar">
+                <option value="Caña">
+                <option value="Tapas">
+            </datalist>
+            <input class="mas" type="submit" value="+">
+            <div class="div_etiqueta">
+                <p class="etiqueta_nuevo">Bar <i class="icon-cancel-circled"></i></p>
+                <p class="etiqueta_nuevo">Caña <i class="icon-cancel-circled"></i></p>
+                <p class="etiqueta_nuevo">Tapas <i class="icon-cancel-circled"></i></p>
+            </div>
+            <h3>Fotos</h3>
+            <button class="boton_borrar4" type="button" onclick="Add_foto();">Añadir foto
+            </button>
+            <!-- <div class="image-upload">
+                <label for="foto">
+                    <img class="input_registro" src="fotos/usuarios/sin_imagen.jpg" alt="img" width="350" height="220">
+                </label>
+                <input id="foto" type="file">
+            </div>
+            <label class="boton_borrar4" for="foto">Añadir foto
+            </label>
+            <input class="boton_borrar4" name="foto" id="foto" type="file" required>
+            <input class="boton_borrar5" type="reset" value="Borrar foto"><br> -->
+            <input class="boton_borrar2" type="reset" value="Limpiar">
+            <input class="boton_borrar3" type="submit" value="Añadir lugar">
+
+            <div id="interfaz_foto">
+
+            </div>
+
+        </form>
+
+        <a class="boton" href="#">Subir</a>
+
+        <footer class="footer">
+            <a>&copy; PCW - Universidad de Alicante - <time datetime="2022-02-20">20/02/2022</time> - Contacto</a>
+            <a class="hover_enlace" href="acerca.html">aquí</a>
+        </footer>
+    </body>
+
+</html>
